@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://github.com/tonsky/FiraCode/raw/master/showcases/all_ligatures.png">
 <meta property="og:image" content="https://luojia.cc/images/fira-code-idea.jpg">
 <meta property="og:image" content="https://luojia.cc/images/fira-code-vscode.jpg">
-<meta property="og:updated_time" content="2018-06-22T00:04:11.000Z">
+<meta property="og:updated_time" content="2018-06-24T03:54:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fira Code: 一个有趣而实用的编程字体">
 <meta name="twitter:description" content="Fira Code 是一个有趣的编程字体。我尤其喜欢它的连字特性：比如，!=会被自动缩写为≠，=&amp;gt;会被缩写为⇒；另外，相邻的加减号、不等号等会被连在一起，方便阅读代码。我认为，这样的特性对编程来说是相当舒服的。 本文中我将简单介绍这个字体，并给出官方的下载链接和安装指南。我还将简单介绍相关的连字解决方案，适用于一些无法使用Fira Code的情况。在一些情况下，连字字体会造成误解，因此我们需">
@@ -216,7 +216,7 @@
 <h3 id="为什么我们需要Fira-Code"><a href="#为什么我们需要Fira-Code" class="headerlink" title="为什么我们需要Fira Code"></a>为什么我们需要Fira Code</h3><p>编程语言中常有许多运算符以字符组合的方式出现。从<code>==</code>、<code>!=</code>、<code>&lt;&gt;</code>、<code>-&gt;</code>到<code>...</code>，这些字符组合一旦被拆散，它们的意义就将和原来不同，我们视它们为一个个独立的逻辑标识，因此可以认为应该让它们之占一个字符的空间；但因Ascii码规定的可视字符数量有限，编程语言需要的运算符数量却多于这一有限的字符数量，编程语言就必须使用多个字符来表达这些逻辑标识。由此我们就需要一种方法，能将这些字符组合重新组装为一个字符，能缓和有限的字符数量和无限的编程实际需要之间的矛盾。</p>
 <p>正如下图所示，在运用了字符集黑科技、遵守了先进的Unicode技术规范的前提下，Fira Code作为一种等宽字体，通过实现编程连字特性，有效地缓和了这一矛盾：</p>
 <p><img src="https://camo.githubusercontent.com/3a8948f34284f378ead7af5846aa432035c687ad/687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667" alt="Fira Code 效果示意"></p>
-<p>下面笔者将稍稍深究这一字体的特性，也对类似的连字解决方案稍作涉及。如读者想直接下载字体体验一把，请点击左侧导航条，跳转到“下载、安装和注意事项”。</p>
+<p>下面笔者将稍稍深究这一字体的特性，也对类似的连字解决方案稍作涉及。如读者想直接下载字体体验一把，可以跳转到<a href="#下载、安装和注意事项">下载、安装和注意事项</a>。</p>
 <h3 id="稍详细的介绍"><a href="#稍详细的介绍" class="headerlink" title="稍详细的介绍"></a>稍详细的介绍</h3><p>Fira Code 的开发者是来自俄罗斯的Никита Прокопов<a href="https://github.com/tonsky" target="_blank" rel="noopener">（他的GitHub主页）</a>，项目可以在GitHub找到<a href="https://github.com/tonsky/FiraCode" target="_blank" rel="noopener">（项目网页）</a>，截至撰写本文时，该项目已有两万多个Stars，可见其广受欢迎。</p>
 <h4 id="能处理的字符"><a href="#能处理的字符" class="headerlink" title="能处理的字符"></a>能处理的字符</h4><p>笔者体验了一把Fira Code，发现它能够把大部分编程语言用得到的字符组合全都拼合在一起。能够处理的字符大致可分为以下几类：</p>
 <ol>
@@ -239,9 +239,10 @@
 <p>本部分所用的测试代码来自《TRPL》的有关章节。<a href="https://kaisery.github.io/trpl-zh-cn/ch02-00-guessing-game-tutorial.html" target="_blank" rel="noopener">测试代码来源</a></p>
 <h4 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h4><p>需要注意的是，因使用的渲染方式特殊，并不是所有编辑器和控制台都支持Fira Code。幸好，实测效果中我们可归纳出，主流的IDE如VSCode、IDEA都是支持这一字体的。如需使用这一字体，你可能需要更换一个编辑器，这就需要知道你的编辑器是否支持该字体。另外，正常显示Fira Code的连字功能还需要对IDE进行一定的设置。</p>
 <p>下面这个网页包含支持的编辑器（在列表内）和IDE的设置方法（在左侧instructions内）：<a href="https://github.com/tonsky/FiraCode#editor-support" target="_blank" rel="noopener">Editor Support</a>。</p>
+<p>笔者并没有使用vs2017开发。据好友测试，vs2017并不完全支持该款字体（可以显示字体，不能显示连字）。在<a href="https://github.com/tonsky/FiraCode/issues/324#issuecomment-265524620" target="_blank" rel="noopener">一篇GitHub issue</a>中，网友实测在同一台设备上，vs2017不能支持，而vs2016是支持的。也有网友指出，这和问题也许是vs2017的bug之一，但提供了解决方案：在windows系统上，可以通过启用Cleartype来开启vs2017对连字字体的支持。<a href="https://github.com/tonsky/FiraCode/issues/455" target="_blank" rel="noopener">解决方案</a></p>
 <p>项目网页并没有指出兼容性与操作系统的关系。笔者认为，这款字体是否兼容与操作系统并无太大关系，只要IDE或控制台有这方面的支持即可。也许我的认识并不是正确的，若有偏谬之处，还请读者斧正。</p>
 <h4 id="中文支持"><a href="#中文支持" class="headerlink" title="中文支持"></a>中文支持</h4><p>Fira Code仅渲染了部分拉丁字符和标点符号，经实测，在大部分IDE中是兼容中文字符的，因为它并没有对中文字符进行重写。但在一些终端中，中文格式是存在显示问题的，笔者认为，这可能与这款字体无关，需要按照安装说明安装实测。</p>
-<h3 id="其它相关实现"><a href="#其它相关实现" class="headerlink" title="其它相关实现"></a>其它相关实现</h3><p>除了Fira Code，还有类似的方法能够实现连字特性。比如下面这个：</p>
+<h3 id="其它相关实现"><a href="#其它相关实现" class="headerlink" title="其它相关实现"></a>其它相关实现</h3><p>除了Fira Code，还有类似的方法能够实现连字特性。</p>
 <h4 id="vim-javascript"><a href="#vim-javascript" class="headerlink" title="vim-javascript"></a>vim-javascript</h4><p>作为一款vim插件，vim-javascript（<a href="https://github.com/pangloss/vim-javascript" target="_blank" rel="noopener">项目页面</a>）主要功能是为vim编辑javascript这个语言提供语法高亮和缩进改进。只需要在控制台中输入以下指令（适用于linux或mac系统），就能安装这款vim插件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript</span><br></pre></td></tr></table></figure>
 <p>据项目页面介绍，它也有连字的特性，能够通过替换一些关键字的符号，实现一部分的连字功能。笔者认为，若是按照字符替换的形式实现，它的的自由度并不会比Fira Code大，因为这款插件并不能替换字体，而只能以已有的字体为载体。就像项目页面中“掩盖字符”(Concealing Characters)一节提到的：</p>
@@ -251,8 +252,7 @@
 <h3 id="下载、安装和注意事项"><a href="#下载、安装和注意事项" class="headerlink" title="下载、安装和注意事项"></a>下载、安装和注意事项</h3><h4 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h4><p>Fira Code 直接在 GitHub 页面的release中提供字符下载，只需要进入Release网页，找到最新的FiraCode_1.xxx.zip，点击下载即可。<a href="https://github.com/tonsky/FiraCode/releases/" target="_blank" rel="noopener">Release网页</a></p>
 <p>如果无法在官网下载，有一篇csdn文章提供了一个中国的镜像下载地址，可以前去围观。<a href="https://blog.csdn.net/shenpibaipao/article/details/76194036" target="_blank" rel="noopener">csdn文章 by 身披白袍</a></p>
 <h4 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h4><p>这款字体的安装方式和其它字体类似，因操作系统的不同，需要采取不同的步骤。官网的安装方式提供在wiki页面中，英文不错的话可以自己进去钻研钻研。这个页面也提供许多主流IDE更改字体的方式，可做参考。<a href="https://github.com/tonsky/FiraCode/wiki" target="_blank" rel="noopener">Wiki页面</a></p>
-<p>笔者并没有使用vs2017开发。据好友亲测，vs2017并不完全支持该款字体（可以显示字体，不能显示连字）。在<a href="https://github.com/tonsky/FiraCode/issues/324#issuecomment-265524620" target="_blank" rel="noopener">一篇GitHub issue</a>中，网友实测在同一台设备上，vs2017不能支持，而vs2016是支持的。也有网友指出，这和问题也许是vs2017的bug之一，但提供了解决方案：在windows系统上，可以通过启用Cleartype来开启vs2017对连字字体的支持。<a href="https://github.com/tonsky/FiraCode/issues/455" target="_blank" rel="noopener">解决方案</a></p>
-<p>安装后若未正常显示，可参考上文“兼容性”部分。</p>
+<p>安装后若未正常显示，可跳转到上文<a href="#兼容性">兼容性</a>部分。</p>
 <h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>这款字体给开发者本人看可谓赏心悦目，但如果截屏发给不使用这款字体的朋友，可能会给他们理解困难，甚至（某种程度上）会误导一些初学者。在OI（包括NOI、ACM等）系列竞赛中，我们还需使用常规的非连字字体，来保证团队协作的高效。这些是所有连字字体共有的提醒事项，请各位使用时多加注意。</p>
 <h3 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h3><p>Fira Code 可能是我见过最有趣的字体了。刚开始编程的时候我喜欢Consolas，它对中文的支持不是很好，后来就下载了贴吧大神提供的Consolas+雅黑混合版，但也只能有限地让代码看着更舒服，也有不舒服的地方，或者说，有痛点，但就是找不到在哪。这次偶遇Fira Code让我恍然大悟，一下子就喜欢上了这款字体。这让我想起我的安卓小手机首次刷CyanogenMod（现在好像不叫这名字了）之后，WiFi标识旁总有个感叹号（表示此WiFi没有连接到因特网，事实上是因为无法连接到评估服务器。谷歌安卓默认的评估服务器已经被墙），每次连接都不知道这个WiFi到底有没有网络，我非常郁闷；一回偶遇noisyfox提供的叹号杀手，修改了评估服务器地址，叹号消失了，心情也不郁闷了。或许许多的偶然相遇都能像这样让我们眼前一亮吧。</p>
 <h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p>群友@pengpengche，让我能够发现Fira Code这款好字体，也开阔了我的视野，给我提供了相关的解决方案。</p>
@@ -270,7 +270,7 @@
         <p><span>本文标题:</span><a href="/2018/06/20/font-fira-code/">Fira Code: 一个有趣而实用的编程字体</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Luo Jia 的个人博客">Luo Jia</a></p>
         <p><span>发布时间:</span>2018年06月20日 - 21时11分</p>
-        <p><span>最后更新:</span>2018年06月22日 - 08时04分</p>
+        <p><span>最后更新:</span>2018年06月24日 - 11时54分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/20/font-fira-code/" title="Fira Code: 一个有趣而实用的编程字体">https://luojia.cc/2018/06/20/font-fira-code/</a>
             <span class="copy-path" data-clipboard-text="原文: https://luojia.cc/2018/06/20/font-fira-code/　　作者: Luo Jia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
